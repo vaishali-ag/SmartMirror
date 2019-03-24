@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 
@@ -24,8 +25,8 @@ TextView note;
 
         note.setText(data);
 
-        Date currentTime = Calendar.getInstance().getTime();
-
-        //CTime.setText((CharSequence) currentTime);
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy.MM.dd  'at' HH:mm:ss z");
+        String currentDateandTime = sdf.format(new Date());
+        CTime.setText(currentDateandTime);
     }
 }
