@@ -55,7 +55,7 @@
 
                     <RadioButton
                         android:id="@+id/radioButton2"
-                        android:layout_width="205dp"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:text="Digital" />
@@ -78,11 +78,11 @@
 
                 <EditText
                     android:id="@+id/Task"
-                    android:layout_width="wrap_content"
-                    android:layout_height="87dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="56dp"
                     android:ems="10"
-                    android:hint="+"
-                    android:inputType="textPersonName" />
+                    android:inputType="textMultiLine" />
+
             </LinearLayout>
 
             <LinearLayout
