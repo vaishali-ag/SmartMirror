@@ -21,12 +21,16 @@ TextView note;
         CTime = findViewById(R.id.curTime);
         note = findViewById(R.id.Notes);
         Intent next = getIntent();
+
         String data = next.getStringExtra("message");
+        
 
         note.setText(data);
 
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy.MM.dd  'at' HH:mm:ss z");
         String currentDateandTime = sdf.format(new Date());
+
+
         CTime.setText(currentDateandTime);
     }
 }

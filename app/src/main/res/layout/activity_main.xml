@@ -4,13 +4,19 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@android:color/darker_gray"
     tools:context=".MainActivity">
 
     <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="0dp">
+        android:id="@+id/scrollView2"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginStart="23dp"
+        android:layout_marginEnd="23dp"
+        android:background="@android:color/background_light"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -24,7 +30,7 @@
 
                 <Switch
                     android:id="@+id/Time"
-                    android:layout_width="match_parent"
+                    android:layout_width="370dp"
                     android:layout_height="wrap_content"
                     android:checked="true"
                     android:text="Time"
@@ -64,13 +70,27 @@
             </LinearLayout>
 
             <LinearLayout
+                android:layout_width="413dp"
+                android:layout_height="147dp"
+                android:orientation="vertical">
+
+                <Switch
+                    android:id="@+id/Weather"
+                    android:layout_width="366dp"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    android:text="Weather"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Headline" />
+            </LinearLayout>
+
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="150dp"
                 android:orientation="vertical">
 
                 <Switch
                     android:id="@+id/Stickey_note"
-                    android:layout_width="match_parent"
+                    android:layout_width="366dp"
                     android:layout_height="wrap_content"
                     android:checked="true"
                     android:text="To Do List"
@@ -91,22 +111,8 @@
                 android:orientation="vertical">
 
                 <Switch
-                    android:id="@+id/Weather"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:checked="true"
-                    android:text="Weather"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Headline" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="413dp"
-                android:layout_height="147dp"
-                android:orientation="vertical">
-
-                <Switch
                     android:id="@+id/Notification"
-                    android:layout_width="match_parent"
+                    android:layout_width="370dp"
                     android:layout_height="wrap_content"
                     android:checked="true"
                     android:text="Notification"
@@ -120,11 +126,12 @@
 
                 <Switch
                     android:id="@+id/News"
-                    android:layout_width="match_parent"
+                    android:layout_width="360dp"
                     android:layout_height="wrap_content"
                     android:checked="true"
                     android:text="News"
                     android:textAppearance="@style/TextAppearance.AppCompat.Headline" />
+
             </LinearLayout>
 
             <Button
