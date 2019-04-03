@@ -36,17 +36,7 @@
                     android:text="Time"
                     android:textAppearance="@style/TextAppearance.AppCompat.Headline" />
 
-                <CheckBox
-                    android:id="@+id/Date"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Date" />
 
-                <CheckBox
-                    android:id="@+id/Day"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Day" />
 
                 <RadioGroup
                     android:layout_width="wrap_content"
@@ -75,12 +65,62 @@
                 android:orientation="vertical">
 
                 <Switch
+                    android:id="@+id/Cal"
+                    android:layout_width="360dp"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    android:text="Calendar"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Headline" />
+                <CheckBox
+                    android:id="@+id/Date"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Date" />
+
+                <CheckBox
+                    android:id="@+id/Day"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Day"
+                    tools:layout_editor_absoluteX="8dp"
+                    tools:layout_editor_absoluteY="272dp" />
+                <CheckBox
+                    android:id="@+id/Event"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Event"
+                    tools:layout_editor_absoluteX="8dp"
+                    tools:layout_editor_absoluteY="272dp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="413dp"
+                android:layout_height="147dp"
+                android:orientation="vertical">
+
+                <Switch
                     android:id="@+id/Weather"
                     android:layout_width="366dp"
                     android:layout_height="wrap_content"
                     android:checked="true"
                     android:text="Weather"
                     android:textAppearance="@style/TextAppearance.AppCompat.Headline" />
+
+                <TextView
+                    android:id="@+id/textView"
+                    android:layout_width="133dp"
+                    android:layout_height="wrap_content"
+                    android:text="Location"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+
+                <EditText
+                    android:id="@+id/location"
+                    android:layout_width="wrap_content"
+                    android:layout_height="63dp"
+                    android:ems="10"
+                    android:inputType="textPersonName"
+                    android:text="Mathura" />
             </LinearLayout>
 
             <LinearLayout
@@ -117,6 +157,20 @@
                     android:checked="true"
                     android:text="Notification"
                     android:textAppearance="@style/TextAppearance.AppCompat.Headline" />
+                <CheckBox
+                    android:id="@+id/Call"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Calls" />
+
+                <CheckBox
+                    android:id="@+id/Msg"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Messages"
+                    tools:layout_editor_absoluteX="8dp"
+                    tools:layout_editor_absoluteY="272dp" />
+
             </LinearLayout>
 
             <LinearLayout
