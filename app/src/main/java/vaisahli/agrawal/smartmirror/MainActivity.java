@@ -26,6 +26,8 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        //initialization
         Save = findViewById(R.id.Save);
         note = findViewById(R.id.Task);
         Time = findViewById(R.id.Time);
@@ -47,8 +49,12 @@ public class MainActivity extends AppCompatActivity {
         Time.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(Time.isChecked())
-                    a=1;
+                if(Time.isChecked()) {
+                    a = 1;
+                    analog.setEnabled(true);
+                    digital.setEnabled(true);
+
+                }
                 else
                 {
                     analog.setEnabled(false);
@@ -62,7 +68,12 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if (Calendar.isChecked())
-                    b=1;
+                {b=1;
+                    date.setEnabled(true);
+                    day.setEnabled(true);
+                    event.setEnabled(true);
+
+                }
                 else
                 {
                     date.setEnabled(false);
@@ -76,10 +87,13 @@ public class MainActivity extends AppCompatActivity {
         Weather.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                if (Weather.isChecked())
+                if (Weather.isChecked()) {
                     c = 1;
+                    location.setEnabled(true);
+                }
                 else
-                {                    location.setEnabled(false);
+                {
+                    location.setEnabled(false);
             }
 
 
@@ -89,8 +103,10 @@ public class MainActivity extends AppCompatActivity {
         StickeyNote.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                if(StickeyNote.isChecked())
-                    d=1;
+                if(StickeyNote.isChecked()) {
+                    d = 1;
+                    note.setEnabled(false);
+                }
                 else
                     note.setEnabled(false);
             }
@@ -101,9 +117,15 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if(Notification.isChecked())
-                    e=1;
+                {   e=1;
+                    call.setEnabled(false);
+                    msg.setEnabled(false);
+
+                }
                 else
-                    Notification.setEnabled(false);
+                {   call.setEnabled(false);
+                     msg.setEnabled(false);
+                }
             }
         });
 
@@ -115,6 +137,8 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+
+//button
 
         Save.setOnClickListener(new View.OnClickListener() {
             @Override

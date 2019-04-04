@@ -20,11 +20,11 @@
         android:id="@+id/txtNotes"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="312dp"
-        android:layout_marginTop="152dp"
+        android:layout_marginTop="280dp"
+        android:layout_marginEnd="68dp"
         android:text="Note"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txt_weather" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <AnalogClock
         android:id="@+id/analogClock1"
@@ -32,10 +32,10 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginStart="292dp"
-        android:layout_marginTop="144dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_marginTop="13dp"
+        android:layout_marginEnd="12dp"
+        app:layout_constraintEnd_toEndOf="@+id/digitalClock1"
+        app:layout_constraintTop_toBottomOf="@+id/digitalClock1" />
 
     <DigitalClock
         android:id="@+id/digitalClock1"
@@ -43,19 +43,39 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/analogClock1"
         android:layout_centerHorizontal="true"
-        android:layout_marginStart="176dp"
         android:layout_marginTop="56dp"
+        android:layout_marginEnd="27dp"
         android:text="DigitalClock"
         android:textAppearance="@style/TextAppearance.AppCompat.Display3"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/txt_news"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="21dp"
+        android:layout_marginTop="106dp"
         android:text="News"
-        tools:layout_editor_absoluteX="166dp"
-        tools:layout_editor_absoluteY="468dp" />
+        app:layout_constraintStart_toEndOf="@+id/day"
+        app:layout_constraintTop_toBottomOf="@+id/day" />
+
+    <TextView
+        android:id="@+id/day"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="152dp"
+        android:layout_marginTop="344dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="135dp"
+        android:layout_marginBottom="65dp"
+        app:layout_constraintBottom_toTopOf="@+id/day"
+        app:layout_constraintStart_toStartOf="parent" />
 
 </android.support.constraint.ConstraintLayout>
