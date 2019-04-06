@@ -43,5 +43,7 @@ TextView note,day,date;
         date.setText(strDate);
 
 
+
+
     }
 }
