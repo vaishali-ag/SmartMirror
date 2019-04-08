@@ -1,0 +1,44 @@
+{
+  "project_info": {
+    "project_number": "908438640423",
+    "firebase_url": "https://smartmirror-faf94.firebaseio.com",
+    "project_id": "smartmirror-faf94",
+    "storage_bucket": "smartmirror-faf94.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:908438640423:android:abd8f7fcb1fd1929",
+        "android_client_info": {
+          "package_name": "vaisahli.agrawal.smartmirror"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "908438640423-lj6b8o0k8d27jgdtjlgvcf429c1ofhr2.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "vaisahli.agrawal.smartmirror",
+            "certificate_hash": "9dc7238586e7af9cfd7bc01f3d70d0881add5b64"
+          }
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBnPXm7iiqMIuLHq00Vg4ecEXLvgpGVNAI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "908438640423-q3q15ilcqoa7j7e3c2ea24iirt3g7dlk.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -25,36 +25,34 @@ public class MainActivity extends AppCompatActivity {
     RadioButton analog,digital;
     CheckBox day,event,date,call,msg;
     RadioGroup rGrup;
-  //  private  DatabaseReference firebaseDatabase;
+    private  DatabaseReference databaseReference;
 
 
 
-    Integer a=0,b=0,c=0,d=0,e=0,f=0;
-
-   // FirebaseDatabase database = FirebaseDatabase.getInstance();
-    //DatabaseReference myRef = database.getReference("message");
-    String timeID;
-    String analogId;
-    String digitalId;
-    String calendarId;
-    String dayId;
-    String dateId;
-    String eventId;
-    String newsId;
-    String msgId;
-    String callId;
-    String nOtifyId;
-    String todoId;
-    String weathId;
-    String noteId;
-    Editable locId;
+public String timeID;
+    public String analogId;
+    public String digitalId;
+    public String calendarId;
+    public String dayId;
+    public String dateId;
+    public String eventId;
+    public String newsId;
+    public String msgId;
+    public String callId;
+    public String nOtifyId;
+    public String Todo;
+    public String weathId;
+    public String noteId;
+    public String weatherLocation;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-//FirebaseDatabase.getInstance().setPersistenceEnabled(true);
+
+
+databaseReference=FirebaseDatabase.getInstance().getReference("mirror");
         //initialization
         Save = findViewById(R.id.Save);
         note = findViewById(R.id.Task);
@@ -68,18 +66,23 @@ public class MainActivity extends AppCompatActivity {
         analog = findViewById(R.id.radioButton);
         digital = findViewById(R.id.radioButton2);
         date = findViewById(R.id.Date);
-        day=findViewById(R.id.Day);
+       day=findViewById(R.id.Day);
         event = findViewById(R.id.Event);
         call = findViewById(R.id.Call);
         msg = findViewById(R.id.Msg);
         rGrup = findViewById(R.id.radiogrup);
 
-        //Time switch disable
+
+
+
+
+
+         //Time switch disable
         Time.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if(Time.isChecked()) {
-                    a = 1;
+
                     analog.setEnabled(true);
                     digital.setEnabled(true);
                     timeID="1";
@@ -95,7 +98,7 @@ public class MainActivity extends AppCompatActivity {
                 rGrup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
                     @Override
                     public void onCheckedChanged(RadioGroup group, int checkedId) {
-                        if(checkedId==R.id.radioButton)
+                       if(checkedId==R.id.radioButton)
                         {
                             analogId="1";
                             digitalId="0";
@@ -104,19 +107,12 @@ public class MainActivity extends AppCompatActivity {
                         else if (checkedId == R.id.radioButton2)
                         {
                             analogId="0";
-                            digitalId="2";
+                            digitalId="1";
                         }
 
                     }
                 });
-                if(analog.isChecked())
-                {
 
-                }
-                if(digital.isChecked())
-                {
-
-                }
             }
         });
 
@@ -125,10 +121,10 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if (Calendar.isChecked())
-                {b=1;
+                {
                     date.setEnabled(true);
                     day.setEnabled(true);
-                    event.setEnabled(true);
+                   event.setEnabled(true);
                     calendarId="1";
 
                 }
@@ -171,7 +167,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if (Weather.isChecked()) {
-                    c = 1;
+
                     location.setEnabled(true);
                     weathId="1";
                 }
@@ -180,7 +176,8 @@ public class MainActivity extends AppCompatActivity {
                     location.setEnabled(false);
                     weathId="0";
             }
-            locId=location.getText();
+                weatherLocation=location.getText().toString().trim();
+
 
 
             }
@@ -190,7 +187,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if(StickeyNote.isChecked()) {
-                    d = 1;
+
                     note.setEnabled(true);
                     noteId="1";
                 }
@@ -198,7 +195,8 @@ public class MainActivity extends AppCompatActivity {
                     note.setEnabled(false);
                     noteId="0";
             }
-            //todoId=location.getText();
+           Todo=note.getText().toString().trim();
+
 
             }
         });
@@ -208,7 +206,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if(Notification.isChecked())
-                {   e=1;
+                {
                     call.setEnabled(true);
                     msg.setEnabled(true);
                     nOtifyId="1";
@@ -261,6 +259,12 @@ public class MainActivity extends AppCompatActivity {
                 next.putExtra("message", message);
                 if(Time.isChecked()||Calendar.isChecked()|| StickeyNote.isChecked()||Weather.isChecked()||News.isChecked()||Notification.isChecked())
                 {
+                    SaveInfo saveInfo=new SaveInfo(timeID,  analogId,  digitalId,  calendarId,  dayId,  dateId,  eventId,
+                             newsId,  msgId,  callId,  nOtifyId,  Todo,  weathId,  noteId,  weatherLocation);
+                    databaseReference.child("time").setValue(saveInfo);
+
+
+
                     startActivity(next);
 
                 }
@@ -270,7 +274,7 @@ public class MainActivity extends AppCompatActivity {
                 }
 
 
-    //            firebaseDatabase=FirebaseDatabase.getInstance().getReference("Mirror").child("" + timeID);
+
 
 
 
@@ -279,5 +283,6 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
+
     }
 }

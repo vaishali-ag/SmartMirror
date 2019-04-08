@@ -24,6 +24,7 @@ TextView note,day,date;
         day=findViewById(R.id.day);
         date=findViewById(R.id.date);
 
+
         //to do list dispaly
         note = findViewById(R.id.txtNotes);
         Intent next = getIntent();
