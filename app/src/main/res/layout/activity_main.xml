@@ -66,7 +66,7 @@
 
                 <Switch
                     android:id="@+id/Cal"
-                    android:layout_width="360dp"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:checked="true"
                     android:text="Calendar"
@@ -103,7 +103,7 @@
 
                 <Switch
                     android:id="@+id/Weather"
-                    android:layout_width="366dp"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:checked="true"
                     android:text="Weather"
@@ -132,7 +132,7 @@
 
                 <Switch
                     android:id="@+id/Stickey_note"
-                    android:layout_width="366dp"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:checked="true"
                     android:text="To Do List"
@@ -154,7 +154,7 @@
 
                 <Switch
                     android:id="@+id/Notification"
-                    android:layout_width="370dp"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:checked="true"
                     android:text="Notification"
@@ -183,7 +183,7 @@
 
                 <Switch
                     android:id="@+id/News"
-                    android:layout_width="360dp"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:checked="true"
                     android:text="News"

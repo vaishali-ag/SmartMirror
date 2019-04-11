@@ -1,6 +1,7 @@
 package vaisahli.agrawal.smartmirror;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -29,21 +30,21 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-public String timeID;
-    public String analogId;
-    public String digitalId;
-    public String calendarId;
-    public String dayId;
-    public String dateId;
-    public String eventId;
-    public String newsId;
-    public String msgId;
-    public String callId;
-    public String nOtifyId;
-    public String Todo;
-    public String weathId;
-    public String noteId;
-    public String weatherLocation;
+    public String timeID="1";
+    public String analogId="1";
+    public String digitalId="1";
+    public String calendarId="1";
+    public String dayId="1";
+    public String dateId="1";
+    public String eventId="1";
+    public String newsId="1";
+    public String msgId="1";
+    public String callId="1";
+    public String nOtifyId="1";
+    public String Todo="...";
+    public String weathId="1";
+    public String noteId="1";
+    public String weatherLocation="Mathura";
 
 
     @Override
@@ -52,7 +53,7 @@ public String timeID;
         setContentView(R.layout.activity_main);
 
 
-databaseReference=FirebaseDatabase.getInstance().getReference("mirror");
+        databaseReference=FirebaseDatabase.getInstance().getReference("mirror");
         //initialization
         Save = findViewById(R.id.Save);
         note = findViewById(R.id.Task);
@@ -73,11 +74,7 @@ databaseReference=FirebaseDatabase.getInstance().getReference("mirror");
         rGrup = findViewById(R.id.radiogrup);
 
 
-
-
-
-
-         //Time switch disable
+        //Time switch disable
         Time.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -261,7 +258,8 @@ databaseReference=FirebaseDatabase.getInstance().getReference("mirror");
                 {
                     SaveInfo saveInfo=new SaveInfo(timeID,  analogId,  digitalId,  calendarId,  dayId,  dateId,  eventId,
                              newsId,  msgId,  callId,  nOtifyId,  Todo,  weathId,  noteId,  weatherLocation);
-                    databaseReference.child("time").setValue(saveInfo);
+                 databaseReference.child("time").setValue(saveInfo);
+
 
 
 
@@ -284,5 +282,24 @@ databaseReference=FirebaseDatabase.getInstance().getReference("mirror");
             }
         });
 
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        SharedPreferences sharedPreferences=getSharedPreferences("vaisahli.agrawal.smartmirror",MODE_PRIVATE);
+        SharedPreferences.Editor editor= sharedPreferences.edit();
+        editor.putString("name",note.getText().toString().trim());
+        editor.putBoolean("bool",true);
+        editor.apply();
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        SharedPreferences sharedPreferences = getSharedPreferences("vaisahli.agrawal.smartmirror", MODE_PRIVATE);
+        String s1=sharedPreferences.getString("name","");
+        Boolean remember=sharedPreferences.getBoolean("bool",false);
+        note.setText(s1);
     }
 }

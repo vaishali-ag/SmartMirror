@@ -21,6 +21,10 @@
             "package_name": "vaisahli.agrawal.smartmirror",
             "certificate_hash": "9dc7238586e7af9cfd7bc01f3d70d0881add5b64"
           }
+        },
+        {
+          "client_id": "908438640423-q3q15ilcqoa7j7e3c2ea24iirt3g7dlk.apps.googleusercontent.com",
+          "client_type": 3
         }
       ],
       "api_key": [
