@@ -9,7 +9,7 @@
 
     <ScrollView
         android:id="@+id/scrollView2"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_marginStart="23dp"
         android:layout_marginEnd="23dp"
@@ -26,38 +26,60 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:orientation="vertical">
+                android:orientation="horizontal">
 
-                <Switch
-                    android:id="@+id/Time"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:checked="true"
-                    android:text="Time"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Headline" />
-
-
-                <RadioGroup
-                    android:id="@+id/radiogrup"
+                <ImageView
+                    android:id="@+id/imageView"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content">
+                    android:layout_height="wrap_content"
+                    tools:srcCompat="@tools:sample/avatars[0]" />
 
-                    <RadioButton
-                        android:id="@+id/radioButton"
-                        android:layout_width="211dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:text="Analog" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
 
-                    <RadioButton
-                        android:id="@+id/radioButton2"
+                    <Switch
+                        android:id="@+id/Time"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:text="Digital" />
-                </RadioGroup>
+                        android:checked="true"
+                        android:text="Time"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Headline" />
 
+
+                    <RadioGroup
+                        android:id="@+id/radiogrup"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <RadioButton
+                            android:id="@+id/radioButton"
+                            android:layout_width="211dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Analog" />
+
+                        <RadioButton
+                            android:id="@+id/radioButton2"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Digital" />
+                    </RadioGroup>
+
+                </LinearLayout>
             </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/calimage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:srcCompat="@tools:sample/avatars[1]" />
 
             <LinearLayout
                 android:layout_width="413dp"
@@ -95,7 +117,18 @@
                     tools:layout_editor_absoluteY="272dp" />
 
             </LinearLayout>
+        </LinearLayout>
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/weathimg"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:srcCompat="@tools:sample/avatars[0]" />
             <LinearLayout
                 android:layout_width="413dp"
                 android:layout_height="147dp"
@@ -124,28 +157,52 @@
                     android:inputType="textPersonName"
                     android:text="Mathura" />
             </LinearLayout>
+        </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="150dp"
-                android:orientation="vertical">
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
 
-                <Switch
-                    android:id="@+id/Stickey_note"
-                    android:layout_width="match_parent"
+                <ImageView
+                    android:id="@+id/todoimg"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:checked="true"
-                    android:text="To Do List"
-                    android:textAppearance="@style/TextAppearance.AppCompat.Headline" />
+                    tools:srcCompat="@tools:sample/avatars[0]" />
 
-                <EditText
-                    android:id="@+id/Task"
+                <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="56dp"
-                    android:ems="10"
-                    android:inputType="textMultiLine" />
+                    android:layout_height="150dp"
+                    android:orientation="vertical">
 
+                    <Switch
+                        android:id="@+id/Stickey_note"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:checked="true"
+                        android:text="To Do List"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Headline" />
+
+                    <EditText
+                        android:id="@+id/Task"
+                        android:layout_width="match_parent"
+                        android:layout_height="56dp"
+                        android:ems="10"
+                        android:inputType="textMultiLine" />
+
+                </LinearLayout>
             </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/notiimg"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:srcCompat="@tools:sample/avatars[0]" />
 
             <LinearLayout
                 android:layout_width="413dp"
@@ -175,6 +232,19 @@
                     tools:layout_editor_absoluteY="272dp" />
 
             </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/newimg"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:srcCompat="@tools:sample/avatars[0]" />
+
 
             <LinearLayout
                 android:layout_width="413dp"
@@ -196,7 +266,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Save" />
-
+        </LinearLayout>
         </LinearLayout>
     </ScrollView>
 

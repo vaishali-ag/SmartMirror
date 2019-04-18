@@ -41,7 +41,7 @@ public class MainActivity extends AppCompatActivity {
     public String msgId="1";
     public String callId="1";
     public String nOtifyId="1";
-    public String Todo="...";
+    public String Todo="";
     public String weathId="1";
     public String noteId="1";
     public String weatherLocation="Mathura";

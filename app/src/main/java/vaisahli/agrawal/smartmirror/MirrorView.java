@@ -131,7 +131,7 @@ public class MirrorView extends AppCompatActivity {
                          date.setText(strDate);
                          //date.setVisibility(View.INVISIBLE);
                      }
-                     if(save.dateId=="1" && save.dayId=="0")
+                    else if(save.dateId=="1" && save.dayId=="0")
                      {
                          //date
                          Calendar calendar = Calendar.getInstance();
@@ -142,7 +142,7 @@ public class MirrorView extends AppCompatActivity {
 
 
                      }
-                     if(save.dateId=="0" && save.dayId=="1")
+                     else if(save.dateId=="0" && save.dayId=="1")
                      {
                          //date
                          SimpleDateFormat sdf = new SimpleDateFormat("EEEE");
@@ -153,7 +153,12 @@ public class MirrorView extends AppCompatActivity {
 
 
                      }
+                     else if(save.dateId=="0" && save.dayId=="0")
+                     {
 
+                         day.setVisibility(View.INVISIBLE);
+                         date.setVisibility(View.INVISIBLE);
+                     }
                  }
                  else
                  {

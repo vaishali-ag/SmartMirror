@@ -5,6 +5,7 @@
     android:id="@+id/relativeLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@android:color/holo_orange_light"
     tools:context=".MirrorView">
 
     <TextView
@@ -35,14 +36,13 @@
         android:id="@+id/analogClock1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="9dp"
-        android:layout_marginTop="67dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="4dp"
         app:layout_constraintStart_toStartOf="@+id/digitalClock1"
         app:layout_constraintTop_toBottomOf="@+id/digitalClock1" />
 
     <DigitalClock
         android:id="@+id/digitalClock1"
-        style="@style/AppTheme"
         android:layout_width="126dp"
         android:layout_height="57dp"
         android:layout_marginTop="60dp"
@@ -56,12 +56,11 @@
         android:id="@+id/txt_news"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="83dp"
-        android:layout_marginBottom="255dp"
+        android:layout_marginStart="168dp"
         android:text="News"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="432dp" />
 
     <TextView
         android:id="@+id/day"
@@ -77,8 +76,8 @@
         android:id="@+id/date"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="107dp"
-        android:layout_marginEnd="128dp"
+        android:layout_marginTop="104dp"
+        android:layout_marginEnd="140dp"
         android:text="date"
         android:textAppearance="@style/TextAppearance.AppCompat.Headline"
         app:layout_constraintEnd_toEndOf="parent"
