@@ -32,7 +32,7 @@ import java.util.List;
 public class MirrorView extends AppCompatActivity {
 
 
-    //private static final Object ArrayAdapter = ;
+
     TextView CTime;
     TextView note,day,date,weather;
     AnalogClock clock;
@@ -69,8 +69,8 @@ public class MirrorView extends AppCompatActivity {
                  {
                      //to do list dispaly
 
-                     String data = next.getStringExtra("message");
-                     note.setText(data);
+                    // String data = next.getStringExtra("message");
+                     note.setText(save.todo);
                      //note.setText(save.getTodo());
                  }
                  else {
@@ -181,8 +181,6 @@ public class MirrorView extends AppCompatActivity {
 
        //String data = next.getStringExtra("message");
         //note.setText(data);
-
-
 
 
 

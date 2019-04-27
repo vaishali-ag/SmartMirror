@@ -41,10 +41,10 @@ public class MainActivity extends AppCompatActivity {
     public String msgId="1";
     public String callId="1";
     public String nOtifyId="1";
-    public String Todo="";
+    public String Todo;
     public String weathId="1";
     public String noteId="1";
-    public String weatherLocation="Mathura";
+    public String weatherLocation;
 
 
     @Override
@@ -53,7 +53,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
 
-        databaseReference=FirebaseDatabase.getInstance().getReference("mirror");
+       databaseReference=FirebaseDatabase.getInstance().getReference("mirror");
         //initialization
         Save = findViewById(R.id.Save);
         note = findViewById(R.id.Task);
@@ -67,7 +67,7 @@ public class MainActivity extends AppCompatActivity {
         analog = findViewById(R.id.radioButton);
         digital = findViewById(R.id.radioButton2);
         date = findViewById(R.id.Date);
-       day=findViewById(R.id.Day);
+        day=findViewById(R.id.Day);
         event = findViewById(R.id.Event);
         call = findViewById(R.id.Call);
         msg = findViewById(R.id.Msg);
@@ -75,9 +75,9 @@ public class MainActivity extends AppCompatActivity {
 
 
         //Time switch disable
-        Time.setOnClickListener(new View.OnClickListener() {
+        Time.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
-            public void onClick(View v) {
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if(Time.isChecked()) {
 
                     analog.setEnabled(true);
@@ -95,7 +95,7 @@ public class MainActivity extends AppCompatActivity {
                 rGrup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
                     @Override
                     public void onCheckedChanged(RadioGroup group, int checkedId) {
-                       if(checkedId==R.id.radioButton)
+                        if(checkedId==R.id.radioButton)
                         {
                             analogId="1";
                             digitalId="0";
@@ -112,6 +112,7 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
+
 
         //calendar switch disable
         Calendar.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
@@ -173,7 +174,9 @@ public class MainActivity extends AppCompatActivity {
                     location.setEnabled(false);
                     weathId="0";
             }
-                weatherLocation=location.getText().toString().trim();
+            String s2;
+                s2=location.getText().toString().trim();
+                weatherLocation=s2;
 
 
 
@@ -192,7 +195,11 @@ public class MainActivity extends AppCompatActivity {
                     note.setEnabled(false);
                     noteId="0";
             }
-           Todo=note.getText().toString().trim();
+            String s1;
+           s1=note.getText().toString().trim();
+            Todo=s1;
+
+
 
 
             }
@@ -253,12 +260,13 @@ public class MainActivity extends AppCompatActivity {
                 String message = note.getText().toString().trim();
                 Intent next = new Intent(MainActivity.this,MirrorView.class);
 
-                next.putExtra("message", message);
+                //next.putExtra("message", message);
+
                 if(Time.isChecked()||Calendar.isChecked()|| StickeyNote.isChecked()||Weather.isChecked()||News.isChecked()||Notification.isChecked())
                 {
                     SaveInfo saveInfo=new SaveInfo(timeID,  analogId,  digitalId,  calendarId,  dayId,  dateId,  eventId,
                              newsId,  msgId,  callId,  nOtifyId,  Todo,  weathId,  noteId,  weatherLocation);
-                 databaseReference.child("time").setValue(saveInfo);
+                databaseReference.child("time").setValue(saveInfo);
 
 
 
@@ -283,14 +291,18 @@ public class MainActivity extends AppCompatActivity {
         });
 
     }
-
-    @Override
+  @Override
     protected void onPause() {
         super.onPause();
         SharedPreferences sharedPreferences=getSharedPreferences("vaisahli.agrawal.smartmirror",MODE_PRIVATE);
         SharedPreferences.Editor editor= sharedPreferences.edit();
-        editor.putString("name",note.getText().toString().trim());
+
+        editor.putString("note",note.getText().toString().trim());
+        editor.putString("weather",location.getText().toString().trim());
+        editor.putBoolean("Time",Time.isChecked());
         editor.putBoolean("bool",true);
+
+
         editor.apply();
     }
 
@@ -298,8 +310,17 @@ public class MainActivity extends AppCompatActivity {
     protected void onResume() {
         super.onResume();
         SharedPreferences sharedPreferences = getSharedPreferences("vaisahli.agrawal.smartmirror", MODE_PRIVATE);
-        String s1=sharedPreferences.getString("name","");
+        String s1=sharedPreferences.getString("note","");
         Boolean remember=sharedPreferences.getBoolean("bool",false);
         note.setText(s1);
+
+        String s2=sharedPreferences.getString("weather","");
+        Boolean re=sharedPreferences.getBoolean("bool",false);
+        location.setText(s2);
+        Boolean b1=  sharedPreferences.getBoolean("Time", Boolean.parseBoolean(null));
+        Time.setEnabled(b1);
+
+
     }
+
 }
